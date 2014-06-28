@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Two angular apps on one page</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<h1>Two angular apps on one page</h1>
+<p>Contains one simple angular app <span style="color: red">(red)</span>, and another <span style="color:blue">(blue)</span> that handles it's own bootstrapping</p>
+<div ng-app="simpleApp" id="simple-app">
+    <h2>This is a simple app containing a random case filter</h2>
+    {{ "The case of this message should be randomized" | randomCaseMessage }}
+</div>
+<div ng-app="selfBootstrappingModule" id="app-own-bootstrap">
+    <h2>This app will have to be bootstrapped manually</h2>
+    {{ "This is a loud message" | loudMessage }}
+</div>
+<script src="js/external/angular.min.js"></script>
+<script src="js/selfBootstrappingModule.js"></script>
+<script src="js/simpleApp.js"></script>
+<script src="js/loudMessengerController.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
